@@ -1,0 +1,118 @@
+package myMethod;
+import java.util.Scanner;
+public class MethodExer1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+				int x=2;
+				int y=3;
+				
+				System.out.println("Introduction for Method ");
+				showMessage(); //call method
+				System.out.println("Hello Jitra");
+				showMessage1();
+				showMessage("Hanum"); //string
+				showMessage(5);
+				showMessage("Hanum" , 2); //(parameter)
+				showMessage(x,y);
+				int total = showSum(x,y); //method baru 
+				System.out.println("Total sum is " + total); //return value
+				int avg = total/2; //bila dah return value kat atas blh terus guna
+				System.out.println("Average is " + avg);
+				double total2 = showSum(3.4, 10.6);
+				System.out.println("Total2 of Double " + total2);
+				double avg1 =total2/2;
+				System.out.println("Average total2 is " + avg1);
+				int total3 = showSum();
+				System.out.println("Total3 of int is " + total3);
+				double total4 = showSumDouble(x,y);
+				System.out.println("Total4 of double is " + total4);
+				
+			}//main method
+			
+			public static void showMessage()
+			{
+				System.out.println("Hello Malaysia");
+			}
+			
+			public static void showMessage1()
+			{
+				System.out.println("Hello UUM");
+			}
+			
+			public static void showMessage(String name) //initialize dkt sini
+			{
+				System.out.println("Name is " + name);
+			}
+			
+			public static void showMessage(int num)
+			{
+				System.out.println("Number is " + num);
+			}
+			
+			public static void showMessage(String name, int num)
+			{
+				System.out.println("Name is " + name + " " + "Number is " + num);
+				for(int i=0; i<num; i++)
+				{
+					System.out.println("Name is " + name); //looping ikut bilangan num
+				}
+			}
+			
+			public static void showMessage(int a, int b)
+			{
+				int sum = 0; //local variable (tak declare kat atas)
+				System.out.println("First Number is " + a);
+				System.out.println("Second Number is " + b);
+				sum = a + b;
+				System.out.println("Sum is " + sum);
+			}
+			
+			public static int showSum(int a, int b) //return tkblh ada "void main"
+			{
+				int c=0;
+				c = a + b;
+				return c;
+			}
+			
+			public static double showSum(double m, double n)
+			{
+				double c=0;
+				c = m + n;
+				return c;
+			}
+			
+			public static int showSum()
+			{
+				int sum = 0;
+				int[] num = new int[5];
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Enter five number : ");
+				for(int i=0; i<num.length; i++)
+				{
+					num[i] = scan.nextInt();
+					sum = sum + num[i];
+				}
+				return sum;				
+			}
+			public static double showSumDouble(int x, int y) //2 dimensional array
+			{
+				double sum = 0;
+				double num [][]= new double[x][y];
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Enter six number : ");
+				for(int i=0; i<x; i++)//2Dimensinonal array kena ada 2 for
+				{
+					for(int j=0; j<y; j++)
+					{
+						num[i][j] = scan.nextDouble();
+					sum=sum+num[i][j];
+					}
+				}
+				return sum;
+
+	}
+
+}
